@@ -31,9 +31,9 @@ video_read.py: Script to capture and save face data for a specific person.
 face_recog.py: Main script for real-time face recognition.
 face_dataset/: Directory where captured .npy files are stored.
 haarcascade_frontalface_alt.xml: Pre-trained Haar Cascade model for face detection.
-
-##Usage
-#Step 1: Collect Face Data  
+ 
+## Usage
+# Step 1: Collect Face Data  
   Run the data collection script to create a profile for yourself or others:
 
     ```bash
@@ -42,7 +42,7 @@ haarcascade_frontalface_alt.xml: Pre-trained Haar Cascade model for face detecti
   -The script will detect your face and save every 10th frame (to ensure data variety).
   -Press 'q' to stop capturing once you have enough samples (e.g., 20–50 samples).
 
-#Step 2: Run Recognition
+# Step 2: Run Recognition
   Start the live recognition system:
 
     ```bash
@@ -52,7 +52,7 @@ haarcascade_frontalface_alt.xml: Pre-trained Haar Cascade model for face detecti
   -A video window will open showing blue boxes around detected faces with their names and confidence levels.
   -Press 'q' to exit.
 
-##⚙️ Technical Details
+## ⚙️ Technical Details
   -Classifier: KNeighborsClassifier with n_neighbors=5.
   -Thresholding: Faces with an average distance greater than 20,000 from the nearest neighbors are marked as "Unknown".
   -Detection: Utilizes the haarcascade_frontalface_alt.xml model for robust face localization.
