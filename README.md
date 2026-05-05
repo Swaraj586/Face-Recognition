@@ -33,24 +33,24 @@ face_dataset/: Directory where captured .npy files are stored.
 haarcascade_frontalface_alt.xml: Pre-trained Haar Cascade model for face detection.
  
 ## Usage
-# Step 1: Collect Face Data  
+## Step 1: Collect Face Data  
   Run the data collection script to create a profile for yourself or others:
 
       python video_read.py
-  -Enter the person's name when prompted.
-  -The script will detect your face and save every 10th frame (to ensure data variety).
-  -Press 'q' to stop capturing once you have enough samples (e.g., 20–50 samples).
+  - Enter the person's name when prompted.
+  - The script will detect your face and save every 10th frame (to ensure data variety).
+  - Press 'q' to stop capturing once you have enough samples (e.g., 20–50 samples).
 
-# Step 2: Run Recognition
+## Step 2: Run Recognition
   Start the live recognition system:
 
        python face_recog.py
-  -The script loads all .npy files from the face_dataset folder.
-  -It trains the KNN model on the fly.
-  -A video window will open showing blue boxes around detected faces with their names and confidence levels.
-  -Press 'q' to exit.
+  - The script loads all .npy files from the face_dataset folder.
+  - It trains the KNN model on the fly.
+  - A video window will open showing blue boxes around detected faces with their names and confidence levels.
+  - Press 'q' to exit.
 
 ## ⚙️ Technical Details
-  -Classifier: KNeighborsClassifier with n_neighbors=5.
-  -Thresholding: Faces with an average distance greater than 20,000 from the nearest neighbors are marked as "Unknown".
-  -Detection: Utilizes the haarcascade_frontalface_alt.xml model for robust face localization.
+  - Classifier: KNeighborsClassifier with n_neighbors=5.
+  - Thresholding: Faces with an average distance greater than 20,000 from the nearest neighbors are marked as "Unknown".
+  - Detection: Utilizes the haarcascade_frontalface_alt.xml model for robust face localization.
